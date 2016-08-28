@@ -1,12 +1,12 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-import com.example.tellJoke;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -40,9 +40,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-        tellJoke joke = new tellJoke();
 
-        Toast.makeText(this, joke.tellJoke(), Toast.LENGTH_SHORT).show();
+        //run GCE Module
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+
     }
 
 
