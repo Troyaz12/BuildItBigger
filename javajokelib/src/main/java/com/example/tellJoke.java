@@ -4,7 +4,7 @@ public class tellJoke {
 
     public String tellJoke(){
 
-        String[] jokes = new String[]{"What do you call a sad cup of coffee? \n"+
+        String[] jokes = new String[]{"What do you call a sad cup of coffee?"+"\n"+
                 "Depresso.","What do you call a fake noodle?\n" +
                 "An impasta!", "Why is peter pan always flying?\n" +
                 "Because he neverlands!","What did the vegetables say at the party?\n" +

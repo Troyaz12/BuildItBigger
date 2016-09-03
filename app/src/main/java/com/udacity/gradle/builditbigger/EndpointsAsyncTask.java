@@ -54,7 +54,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     protected void onPostExecute(String result) {
         //start new intent to display the joke
         Intent newIntent = new Intent(context,androidjokelib.class);
-        newIntent.putExtra("joke", result);
+        newIntent.putExtra(context.getString(R.string.joke), result);
         context.startActivity(newIntent);
 
     }

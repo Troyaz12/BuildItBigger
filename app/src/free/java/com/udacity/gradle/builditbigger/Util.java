@@ -6,7 +6,6 @@ package com.udacity.gradle.builditbigger;
 
 public class Util {
 
-    public boolean add = true;
 
     public static boolean createAd() {
 
