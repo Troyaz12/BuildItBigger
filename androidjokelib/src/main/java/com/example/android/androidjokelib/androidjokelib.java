@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class androidjokelib extends AppCompatActivity {
+public class AndroidJokeLib extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

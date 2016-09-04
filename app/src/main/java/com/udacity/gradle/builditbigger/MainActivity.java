@@ -7,12 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-
 public class MainActivity extends ActionBarActivity {
 
-    private InterstitialAd mInterstitialAd;
     private ProgressBar spinner;
 
     @Override
@@ -20,17 +16,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(Util.createAd()==true) {
-            //create new add and load it
-            mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId(getString(R.string.addId));
-            AdRequest request = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-            mInterstitialAd.loadAd(request);
 
-
-        }
         //create spinner
         spinner=(ProgressBar)findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
@@ -71,15 +57,6 @@ public class MainActivity extends ActionBarActivity {
         super.onResume();
         spinner.setVisibility(View.GONE);
 
-        if(Util.createAd()==true) {
-        //show add
-        if(mInterstitialAd.isLoaded())
-            mInterstitialAd.show();
-            //load add again
-            AdRequest request = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-            mInterstitialAd.loadAd(request);
-        }
+
     }
 }

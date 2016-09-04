@@ -6,7 +6,7 @@
 
 package com.example.TroysMacBook.myapplication.backend;
 
-import com.example.tellJoke;
+import com.example.TellJoke;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -31,7 +31,7 @@ public class MyEndpoint {
     @ApiMethod(name = "getJokes")
     public MyBean getJokes() {
         MyBean response = new MyBean();
-        tellJoke joke = new tellJoke();
+        TellJoke joke = new TellJoke();
 
         response.setData(joke.tellJoke());
 

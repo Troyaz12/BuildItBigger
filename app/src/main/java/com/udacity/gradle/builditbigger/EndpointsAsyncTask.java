@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-import com.example.android.androidjokelib.androidjokelib;
+import com.example.android.androidjokelib.AndroidJokeLib;
 import com.example.troysmacbook.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -53,7 +53,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         //start new intent to display the joke
-        Intent newIntent = new Intent(context,androidjokelib.class);
+        Intent newIntent = new Intent(context,AndroidJokeLib.class);
         newIntent.putExtra(context.getString(R.string.joke), result);
         context.startActivity(newIntent);
 

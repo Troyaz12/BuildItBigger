@@ -1,8 +1,9 @@
 package com.example;
 
-public class tellJoke {
+public class TellJoke {
 
     public String tellJoke(){
+
 
         String[] jokes = new String[]{"What do you call a sad cup of coffee?"+"\n"+
                 "Depresso.","What do you call a fake noodle?\n" +

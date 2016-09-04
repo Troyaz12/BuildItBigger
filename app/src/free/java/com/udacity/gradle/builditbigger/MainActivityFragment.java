@@ -8,12 +8,14 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+    private InterstitialAd mInterstitialAd;
 
     public MainActivityFragment() {
     }
@@ -31,6 +33,29 @@ public class MainActivityFragment extends Fragment {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
+            //create new add and load it
+            mInterstitialAd = new InterstitialAd(getContext());
+            mInterstitialAd.setAdUnitId(getString(R.string.addId));
+            AdRequest request = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .build();
+            mInterstitialAd.loadAd(request);
+
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+            //show add
+            if(mInterstitialAd.isLoaded())
+                mInterstitialAd.show();
+            //load add again
+            AdRequest request = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .build();
+            mInterstitialAd.loadAd(request);
+
     }
 }
